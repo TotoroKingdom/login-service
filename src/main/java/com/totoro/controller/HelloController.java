@@ -1,6 +1,10 @@
 package com.totoro.controller;
 
-import com.totoro.util.IpUtil;
+import cn.hutool.extra.servlet.ServletUtil;
+import cn.hutool.http.useragent.Browser;
+import cn.hutool.http.useragent.UserAgent;
+import cn.hutool.http.useragent.UserAgentUtil;
+import com.totoro.util.RequestUtil;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,9 +16,9 @@ public class HelloController {
 
     @RequestMapping()
     public String hello(HttpServletRequest request, HttpServletResponse response){
-        String ipAddr = IpUtil.getIpAddr(request);
-        String browser = request.getHeader("USER-AGENT");
-        String result = browser + ":" + ipAddr;
+        String clientIP = ServletUtil.getClientIP(request);
+        String name = UserAgentUtil.parse(request.getHeader("user-agent")).getBrowser().getName();
+        String result = name + ": " + clientIP;
         return result;
     }
 }
