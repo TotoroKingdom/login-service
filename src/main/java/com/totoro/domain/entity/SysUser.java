@@ -136,6 +136,12 @@ public class SysUser {
     private String remark;
 
     /**
+     * 备注
+     */
+    @Column(name = "version")
+    private int version;
+
+    /**
      * 部门对象
      */
 //    @Transient
@@ -165,10 +171,5 @@ public class SysUser {
      */
     @Transient
     private Long[] postIds;
-
-
-    public SysUser() {
-
-    }
 
 }

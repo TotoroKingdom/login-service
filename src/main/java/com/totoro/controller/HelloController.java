@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 public class HelloController {
 
-    @RequestMapping()
+    @RequestMapping("hello")
     public String hello(HttpServletRequest request, HttpServletResponse response){
         String clientIP = ServletUtil.getClientIP(request);
         String name = UserAgentUtil.parse(request.getHeader("user-agent")).getBrowser().getName();

@@ -12,7 +12,7 @@ import java.util.Random;
 public class TokenUtil {
 
      public static String getToken(){
-         String token = RandomStringUtils.random(10);
+         String token = RandomStringUtils.randomAlphanumeric(18);
          return token;
      }
 }
