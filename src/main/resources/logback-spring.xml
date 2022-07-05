@@ -83,10 +83,11 @@
     </springProfile>
 
     <!--生产环境:输出到文件-->
-    <springProfile name="prd">
+    <springProfile name="pro">
         <root level="INFO">
             <appender-ref ref="RUNTIME" />
             <appender-ref ref="ERROR" />
+            <appender-ref ref="INFO" />
         </root>
     </springProfile>
 
