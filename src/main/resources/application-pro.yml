@@ -1,5 +1,6 @@
 server:
   port: 8080
+
 spring:
   # ???????
   datasource:
@@ -18,3 +19,4 @@ spring:
         #??jpa?????????????????????
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
         #physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
