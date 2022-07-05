@@ -7,6 +7,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import javax.annotation.Resource;
+
 /**
  * @Description TODO
  * @Author totoro
@@ -17,14 +19,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 //@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Resource
+    private UserDetailsServiceImpl userDetailsService;
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        auth
-                .inMemoryAuthentication()
-                .passwordEncoder(encoder)
-                .withUser("admin")
-                .password(encoder.encode("123465"))
-                .roles("user");
+        auth.userDetailsService(userDetailsService)
+                .passwordEncoder(new BCryptPasswordEncoder());
     }
 }
