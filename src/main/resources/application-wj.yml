@@ -22,3 +22,10 @@ spring:
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
         #physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
+logging:
+  level:
+    com.hime: info
+    org.springframework: error
+  config: classpath:logback-spring.xml
+logback:
+  path: D:\others\logs
