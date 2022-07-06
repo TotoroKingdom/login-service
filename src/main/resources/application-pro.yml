@@ -28,4 +28,4 @@ logging:
     org.springframework: error
   config: classpath:logback-spring.xml
 logback:
-  path: D:\others\logs
+  path: /opt/login-service/log
