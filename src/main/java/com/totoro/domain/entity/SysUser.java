@@ -6,6 +6,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 
@@ -20,7 +21,7 @@ import java.util.Date;
 @Table(name = "sys_user")
 @DynamicInsert(true)
 @DynamicUpdate(true)
-public class SysUser {
+public class SysUser implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -1,10 +1,5 @@
 package com.totoro.controller;
 
-import cn.hutool.extra.servlet.ServletUtil;
-import cn.hutool.http.useragent.Browser;
-import cn.hutool.http.useragent.UserAgent;
-import cn.hutool.http.useragent.UserAgentUtil;
-import com.totoro.util.RequestUtil;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

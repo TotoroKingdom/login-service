@@ -9,7 +9,7 @@ import java.util.Random;
  * @Author totoro
  * @Date 2022-07-03 23:09
  */
-public class TokenUtil {
+public class TokenUtils {
 
      public static String getToken(){
          String token = RandomStringUtils.randomAlphanumeric(18);

@@ -10,6 +10,17 @@ spring:
     url: jdbc:mysql://localhost:3306/login-service?serverTimezone=Asia/Shanghai&characterEncoding=utf-8
     username: root
     password: root
+  #redis
+  redis:
+    host: 192.168.121.121
+    port: 6379
+    password: redis2022
+    timeout: 3000
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
   jpa:
     show-sql: true # 默认false，在日志里显示执行的sql语句
     database: mysql

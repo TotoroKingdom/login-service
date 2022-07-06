@@ -4,6 +4,7 @@ package com.totoro.controller;
 import com.totoro.auth.LoginService;
 import com.totoro.domain.model.AjaxResult;
 import com.totoro.domain.model.LoginBody;
+import com.totoro.common.constant.Constants;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +22,7 @@ public class LoginController {
 
         String token = loginService.login(loginBody.getUsername(), loginBody.getPassword());
         AjaxResult ajaxResult = new AjaxResult();
-        ajaxResult.put("token",token);
+        ajaxResult.put(Constants.TOKEN, token);
         return ajaxResult;
 
     }

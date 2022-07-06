@@ -4,12 +4,23 @@ server:
     context-path: /api
 
 spring:
-  # 配置数据源信息
+  # ???????
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://192.168.168.115:3306/login-service?serverTimezone=Asia/Shanghai&characterEncoding=utf-8
     username: root
     password: root
+  #redis
+  redis:
+    host: 192.168.121.121
+    port: 6379
+    password: redis2022
+    timeout: 3000
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
   jpa:
     show-sql: true # 默认false，在日志里显示执行的sql语句
     database: mysql
@@ -29,3 +40,13 @@ logging:
   config: classpath:logback-spring.xml
 logback:
   path: D:\others\logs
+
+# token配置
+token:
+  # 令牌自定义标识
+  header: Authorization
+  # 令牌密钥
+  secret: abcd1234efgh
+  # 令牌有效期（默认30分钟）
+  expireTime: 30
+
