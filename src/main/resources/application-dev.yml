@@ -1,5 +1,7 @@
 server:
   port: 8080
+  servlet:
+    context-path: /api
 
 spring:
   # 配置数据源信息
@@ -20,3 +22,5 @@ spring:
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
         #physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
+logging:
+  config: classpath:logback-spring.xml
