@@ -1,6 +1,8 @@
 package com.totoro.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
@@ -77,6 +79,8 @@ public class SysUser implements Serializable {
     /**
      * 密码
      */
+    @JsonIgnore
+    @JsonProperty
     @Column(name = "password")
     private String password;
 
