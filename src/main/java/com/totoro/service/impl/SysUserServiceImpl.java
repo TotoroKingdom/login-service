@@ -1,6 +1,7 @@
 package com.totoro.service.impl;
 
 import com.totoro.dao.SysUserDao;
+import com.totoro.domain.entity.SysUser;
 import com.totoro.service.SysUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -18,8 +19,6 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Resource
     private SysUserDao userDao;
-
-
 
 
 }

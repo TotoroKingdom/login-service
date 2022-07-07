@@ -1,8 +1,8 @@
 package com.totoro.utils;
 
+import cn.dev33.satoken.secure.BCrypt;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootTest
 class TokenUtilTest {
@@ -10,9 +10,9 @@ class TokenUtilTest {
 
     @Test
     void getPwd(){
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        String encode = encoder.encode("123456");
-        System.out.println(encode);
+        String hashpw = BCrypt.hashpw("123456");
+        System.out.println(hashpw);
+
     }
 
     @Test
