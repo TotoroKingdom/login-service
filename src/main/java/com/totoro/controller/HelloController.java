@@ -1,5 +1,6 @@
 package com.totoro.controller;
 
+import cn.dev33.satoken.stp.StpUtil;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,8 @@ public class HelloController {
 
     @RequestMapping("hello")
     public Map<Object, Object> hello(HttpServletRequest request, HttpServletResponse response){
+        long loginIdAsLong = StpUtil.getLoginIdAsLong();
+        System.out.println(loginIdAsLong);
         HashMap<Object, Object> result = new HashMap<>();
         result.put("hello","world");
         return result;

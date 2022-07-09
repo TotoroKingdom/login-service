@@ -64,6 +64,7 @@ public class SysUser implements Serializable {
     @Column(name = "phonenumber")
     private String phonenumber;
 
+
     /**
      * 用户性别
      */

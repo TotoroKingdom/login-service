@@ -21,6 +21,7 @@ public class LoginController {
         String token = loginService.login(loginBody);
         AjaxResult ajaxResult = new AjaxResult();
         ajaxResult.put(Constants.TOKEN,token);
+
         return ajaxResult;
 
     }

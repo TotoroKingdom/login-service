@@ -29,6 +29,7 @@ public class UserController {
         AjaxResult result = AjaxResult.success();
 //        result.put("roles", roles);
 //        result.put("permissions", permissions);
+        result.put("hh","aa");
         return result;
 
     }
