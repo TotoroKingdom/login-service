@@ -9,6 +9,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -23,12 +26,10 @@ class NoticeServiceTest {
         String s = HttpUtil.get("https://adachi-bot.oss-cn-beijing.aliyuncs.com/Version2/slip/index.yml");
         String[] split = s.split("-");
         for (int i = 0; i < split.length; i++) {
-
-            String s1 = Base64.decodeStr(split[i]);
-            System.out.println(s1);
+            String s2 = split[i];
             Notice notice = new Notice();
-            notice.setContent(s1);
-            Notice save = noticeDao.save(notice);
+            notice.setContent(s2);
+            noticeDao.save(notice);
 
         }
 
