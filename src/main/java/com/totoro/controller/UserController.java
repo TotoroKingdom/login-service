@@ -27,8 +27,6 @@ public class UserController {
         // TODO: 2022-07-06 角色
         // TODO: 2022-07-06 权限
         AjaxResult result = AjaxResult.success();
-//        result.put("roles", roles);
-//        result.put("permissions", permissions);
         result.put("hh","aa");
         return result;
 

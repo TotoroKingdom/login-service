@@ -33,8 +33,6 @@ public class LoginUtils {
     public static void loginByDevice(LoginUser loginUser, DeviceType deviceType) {
         SaHolder.getStorage().set(LOGIN_USER_KEY, loginUser);
         StpUtil.login(loginUser.getUserId(), deviceType.getDevice());
-//        System.out.println(loginUser.getUserId());
-//        System.out.println(loginUser.getLoginId());
         StpUtil.getTokenSession().set(LOGIN_USER_KEY, loginUser);
     }
 

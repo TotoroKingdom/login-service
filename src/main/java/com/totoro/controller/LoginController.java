@@ -1,6 +1,8 @@
 package com.totoro.controller;
 
 
+import cn.dev33.satoken.stp.SaTokenInfo;
+import cn.dev33.satoken.stp.StpUtil;
 import com.totoro.auth.LoginService;
 import com.totoro.common.constant.Constants;
 import com.totoro.domain.model.AjaxResult;
@@ -19,10 +21,8 @@ public class LoginController {
     @PostMapping("login")
     public AjaxResult login(@RequestBody LoginBody loginBody){
         String token = loginService.login(loginBody);
-        AjaxResult ajaxResult = new AjaxResult();
-        ajaxResult.put(Constants.TOKEN,token);
-
-        return ajaxResult;
+        SaTokenInfo tokenInfo = StpUtil.getTokenInfo();
+        return AjaxResult.success(token);
 
     }
 }

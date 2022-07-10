@@ -21,6 +21,13 @@
     </properties>
     <dependencies>
 
+        <!-- Jedis依赖 -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.6.3</version>
+        </dependency>
+
         <!-- Sa-Token 权限认证, 在线文档：http://sa-token.dev33.cn/ -->
         <dependency>
             <groupId>cn.dev33</groupId>
