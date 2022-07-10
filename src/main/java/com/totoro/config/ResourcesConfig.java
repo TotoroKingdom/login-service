@@ -15,39 +15,18 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Slf4j
 @Configuration
 public class ResourcesConfig implements WebMvcConfigurer {
-//    @Autowired
-//    private RepeatSubmitInterceptor repeatSubmitInterceptor;
-//
-//    @Override
-//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        /** 本地文件上传路径 */
-//        registry.addResourceHandler(Constants.RESOURCE_PREFIX + "/**").addResourceLocations("file:" + RuoYiConfig.getProfile() + "/");
-//
-//        /** swagger配置 */
-//        registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
-//        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
-//    }
-//
-//    /**
-//     * 自定义拦截规则
-//     */
-//    @Override
-//    public void addInterceptors(InterceptorRegistry registry) {
-//        registry.addInterceptor(repeatSubmitInterceptor).addPathPatterns("/**");
-//    }
-
     /**
      * 跨域配置
      */
     @Bean
     public CorsFilter corsFilter() {
-        log.info("---------------开启跨域配置---------------------------");
+        log.info("---------------开启跨域配置 localhost:8088---------------------------");
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
         // 设置访问源地址
 //        config.addAllowedOrigin("*");
-        config.addAllowedOriginPattern("*");
+        config.addAllowedOriginPattern("http://localhost:8088");
         // 设置访问源请求头
         config.addAllowedHeader("*");
         // 设置访问源请求方法
