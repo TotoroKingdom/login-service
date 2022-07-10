@@ -20,13 +20,13 @@ public class ResourcesConfig implements WebMvcConfigurer {
      */
     @Bean
     public CorsFilter corsFilter() {
-        log.info("---------------开启跨域配置 localhost:8088---------------------------");
+        log.info("---------------开启跨域配置---------------------------");
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
         // 设置访问源地址
 //        config.addAllowedOrigin("*");
-        config.addAllowedOriginPattern("http://localhost:8088");
+        config.addAllowedOriginPattern("*");
         // 设置访问源请求头
         config.addAllowedHeader("*");
         // 设置访问源请求方法
