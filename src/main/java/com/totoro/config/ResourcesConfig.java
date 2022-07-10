@@ -1,5 +1,6 @@
 package com.totoro.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * 通用配置
  * @author totoro
  */
+@Slf4j
 @Configuration
 public class ResourcesConfig implements WebMvcConfigurer {
 //    @Autowired
@@ -39,7 +41,7 @@ public class ResourcesConfig implements WebMvcConfigurer {
      */
     @Bean
     public CorsFilter corsFilter() {
-        System.out.println("允许跨域----------------");
+        log.info("---------------开启跨域配置---------------------------");
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
