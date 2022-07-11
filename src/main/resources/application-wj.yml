@@ -12,9 +12,9 @@ spring:
     password: root
   #redis
   redis:
-    host: 192.168.121.121
+    host: 183.236.223.146
     port: 6379
-    password: redis2022
+    password: 123456
     timeout: 3000
     pool:
       max-active: 8
@@ -63,3 +63,7 @@ sa-token:
   token-style: random-64
   # 是否输出操作日志
   is-log: false
+
+register:
+  callback:
+    url: localhost:8088/api/register/active?code=

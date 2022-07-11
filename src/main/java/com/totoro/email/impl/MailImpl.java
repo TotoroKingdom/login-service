@@ -1,9 +1,6 @@
 package com.totoro.email.impl;
 
-import cn.hutool.core.util.RandomUtil;
-import cn.hutool.extra.template.TemplateEngine;
 import com.totoro.email.Mail;
-import com.totoro.utils.TokenUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,7 +17,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.MessageFormat;
-import java.util.Random;
 
 @Slf4j
 @Service
@@ -31,13 +27,14 @@ public class MailImpl implements Mail {
 
     @Value("${spring.mail.username}")
     private String fromEmail;
-
+    @Value("${register.callback.url}")
+    private String registerCallbackUrl;
 
     @Override
-    public void send(String receiver, String subject, String text) {
+    public void send(String receiver, String subject, String code) {
 
-
-
+        String text = registerCallbackUrl+code;
+        log.info("registerCallbackUrl=="+text);
         String content = buildContent(text);
 
         try {
@@ -58,10 +55,10 @@ public class MailImpl implements Mail {
     }
 
     @Override
-    public String buildContent(String code) {
+    public String buildContent(String text) {
 
         //加载邮件html模板
-        Resource resource = new ClassPathResource("static/mailtemplate.ftl");
+        Resource resource = new ClassPathResource("static/register.ftl");
         try {
             log.info("resource="+resource.getURL());
         } catch (IOException e) {
@@ -96,7 +93,7 @@ public class MailImpl implements Mail {
             }
         }
         //替换html模板中的参数
-        return MessageFormat.format(buffer.toString(), code);
+        return MessageFormat.format(buffer.toString(), text);
     }
 
 

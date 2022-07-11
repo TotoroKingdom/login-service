@@ -13,4 +13,6 @@ public interface SysUserDao extends JpaRepository<SysUser,Long>, JpaSpecificatio
 
     SysUser findByUserName(String username);
 
+    SysUser findByRegisterCode(String registerCode);
+
 }

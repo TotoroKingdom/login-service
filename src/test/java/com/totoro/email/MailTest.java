@@ -15,13 +15,10 @@ class MailTest {
 
     @Test
     void send() {
-        for (int i = 0; i < 10; i++) {
-
-            String receiver = "765830637@qq.com";
-            String subject = "注册";
-            String code = TokenUtils.getRegisterCode();
-            mail.send(receiver,subject,code);
-        }
+       String receiver = "634581304@qq.com";
+       String subject = "注册激活邮件";
+       String code = TokenUtils.getRegisterCode();
+       mail.send(receiver,subject,code);
 
     }
 
