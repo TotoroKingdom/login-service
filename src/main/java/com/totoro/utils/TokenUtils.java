@@ -15,4 +15,9 @@ public class TokenUtils {
          String token = RandomStringUtils.randomAlphanumeric(18);
          return token;
      }
+
+    public static String getRegisterCode(){
+        String token = RandomStringUtils.randomNumeric(6);
+        return token;
+    }
 }

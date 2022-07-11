@@ -72,6 +72,9 @@ public class LoginService {
         } else if (UserStatus.DISABLE.getCode().equals(user.getStatus())) {
             log.info("登录用户：{} 已被停用.", username);
             throw new UserException("user.blocked", username);
+        }else if( UserStatus.UNREGISTERED.getCode().equals(user.getStatus())){
+            log.info("登录用户: {} 未激活。");
+            throw new UserException("用户未激活", username);
         }
         return user;
     }

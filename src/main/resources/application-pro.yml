@@ -43,6 +43,11 @@ spring:
         #??jpa?????????????????????
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
         #physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: totorokingdom@foxmail.com
+    password: ovgajtqmiidabdeh
 
 
 logging:
