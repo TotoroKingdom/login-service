@@ -1,5 +1,6 @@
 package com.totoro.utils;
 
+import cn.hutool.core.lang.UUID;
 import org.apache.commons.lang.RandomStringUtils;
 
 import java.util.Random;
@@ -15,4 +16,8 @@ public class TokenUtils {
          String token = RandomStringUtils.randomAlphanumeric(18);
          return token;
      }
+
+    public static String getRegisterCode(){
+         return UUID.randomUUID().toString().replaceAll("-","");
+    }
 }

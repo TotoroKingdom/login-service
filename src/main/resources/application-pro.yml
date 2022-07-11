@@ -43,6 +43,11 @@ spring:
         #??jpa?????????????????????
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
         #physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: totorokingdom@foxmail.com
+    password: ovgajtqmiidabdeh
 
 
 logging:
@@ -78,6 +83,10 @@ sa-token:
   token-style: random-64
   # 是否输出操作日志
   is-log: false
+
+register:
+  callback:
+    url: 120.78.215.214/api/register/active?code=
 
 
 

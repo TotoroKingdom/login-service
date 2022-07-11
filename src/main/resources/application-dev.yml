@@ -43,6 +43,11 @@ spring:
         #指定jpa的自动表生成策略，驼峰自动映射为下划线格式
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
         #physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: totorokingdom@foxmail.com
+    password: ovgajtqmiidabdeh
 
 logging:
   level:
@@ -68,4 +73,7 @@ sa-token:
   token-style: random-64
   # 是否输出操作日志
   is-log: false
+register:
+  callback:
+    url: localhost:8080/api/register/active?code=
 

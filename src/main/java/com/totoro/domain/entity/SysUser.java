@@ -86,7 +86,7 @@ public class SysUser implements Serializable {
     private String password;
 
     /**
-     * 帐号状态（0正常 1停用）
+     * 帐号状态（0正常 1停用 3未激活）
      */
     @Column(name = "status")
     private String status;
@@ -146,6 +146,12 @@ public class SysUser implements Serializable {
      */
     @Column(name = "version")
     private int version;
+
+    /**
+     * 注册激活码
+     */
+    @Column(name = "register_code")
+    private String registerCode;
 
     /**
      * 部门对象
