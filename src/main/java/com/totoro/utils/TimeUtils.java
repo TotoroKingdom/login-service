@@ -12,13 +12,13 @@ import java.time.LocalTime;
 public class TimeUtils {
 
     /**
-     * 计算几天剩余多少秒
+     * 计算几天剩余多少分钟
      */
-    public static Integer todayResidue(){
+    public static Integer todayResidueMinutes(){
         LocalTime now = LocalTime.now();
         LocalTime max = LocalTime.MAX;
         Duration duration = Duration.between(now, max);
-        long millis = duration.toMillis();
+        long millis = duration.toMinutes();
         int result = (int) millis;
         return result;
     }

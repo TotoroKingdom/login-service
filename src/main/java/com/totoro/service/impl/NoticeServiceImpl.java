@@ -44,7 +44,7 @@ public class NoticeServiceImpl implements NoticeService {
         int i = random.nextInt(all.size());
         Notice randomNotice = all.get(i);
         //存入redis
-        redisCache.setCacheObject(userId,randomNotice, TimeUtils.todayResidue(), TimeUnit.SECONDS);
+        redisCache.setCacheObject(userId,randomNotice, TimeUtils.todayResidueMinutes(), TimeUnit.MINUTES);
 
         return randomNotice;
     }
