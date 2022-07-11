@@ -39,7 +39,6 @@ public class NoticeServiceImpl implements NoticeService {
             return notice;
         }
 
-
         List<Notice> all = noticeDao.findAll();
         Random random = new Random();
         int i = random.nextInt(all.size());
