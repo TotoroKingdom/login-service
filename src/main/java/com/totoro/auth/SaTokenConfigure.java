@@ -33,6 +33,7 @@ public class SaTokenConfigure implements WebMvcConfigurer {
             urls.add("/**/v3/api-docs/**");//swagger
             urls.add("/register/**");
             urls.add("/login");
+            urls.add("/hello");
             registry.addInterceptor(new SaRouteInterceptor())
                     .addPathPatterns("/**")
                     .excludePathPatterns(urls);

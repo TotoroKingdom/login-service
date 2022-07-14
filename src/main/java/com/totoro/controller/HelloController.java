@@ -11,15 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
-@Api("hello")
 @RestController
 public class HelloController {
 
-    @ApiOperation("hello")
     @RequestMapping("hello")
     public Map<Object, Object> hello(HttpServletRequest request, HttpServletResponse response){
-        long loginIdAsLong = StpUtil.getLoginIdAsLong();
-        System.out.println(loginIdAsLong);
         HashMap<Object, Object> result = new HashMap<>();
         result.put("hello","world");
         return result;
