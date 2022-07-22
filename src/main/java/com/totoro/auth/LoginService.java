@@ -84,7 +84,7 @@ public class LoginService {
      */
     private LoginUser buildLoginUser(SysUser user) {
         LoginUser loginUser = new LoginUser();
-        loginUser.setUserId(user.getUserId());
+        loginUser.setUserId(user.getId());
         loginUser.setDeptId(user.getDeptId());
         loginUser.setUsername(user.getUserName());
 //        loginUser.setUserType(user.getUserType());
